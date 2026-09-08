@@ -23,7 +23,8 @@ export default function useCountdown(dateToCountdownFrom, onComplete) {
   const startTimer = useCallback(() => {
     const countdownDate = new Date(dateToCountdownFrom).getTime(); // milliseconds
 
-    intervalRef.current = setInterval(() => {
+    // A single tick: compute the remaining time and update state.
+    const tick = () => {
       setIsTimerStarted(true);
 
       const now = new Date().getTime(); // now in milliseconds.
@@ -60,7 +61,12 @@ export default function useCountdown(dateToCountdownFrom, onComplete) {
         setTimerMinutes(minutes);
         setTimerSeconds(seconds);
       }
-    }, 1000);
+    };
+
+    // Run once immediately so the first render shows the correct time
+    // instead of the initial 0h 0m 0s, then update every second.
+    tick();
+    intervalRef.current = setInterval(tick, 1000);
   }, [dateToCountdownFrom, onComplete]);
 
   useEffect(() => {
