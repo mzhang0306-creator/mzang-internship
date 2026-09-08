@@ -11,18 +11,22 @@
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
 
-/* Hot Collections react-slick carousel */
-#section-collections .slick-slider {
+/* react-slick carousels (Hot Collections + New Items) */
+#section-collections .slick-slider,
+#section-items .slick-slider {
   position: relative;
 }
-#section-collections .slick-slide > div {
+#section-collections .slick-slide > div,
+#section-items .slick-slide > div {
   padding: 0 12px;
 }
-#section-collections .slick-list {
+#section-collections .slick-list,
+#section-items .slick-list {
   margin: 0 -12px;
 }
 /* Custom arrows positioned outside the cards */
-#section-collections .hot-coll-nav {
+#section-collections .hot-coll-nav,
+#section-items .hot-coll-nav {
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
@@ -42,13 +46,16 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   transition: background 0.2s ease, color 0.2s ease;
 }
-#section-collections .hot-coll-nav:hover {
+#section-collections .hot-coll-nav:hover,
+#section-items .hot-coll-nav:hover {
   background: #35404f;
   color: #fff;
 }
-#section-collections .hot-coll-nav--prev {
+#section-collections .hot-coll-nav--prev,
+#section-items .hot-coll-nav--prev {
   left: -22px;
 }
-#section-collections .hot-coll-nav--next {
+#section-collections .hot-coll-nav--next,
+#section-items .hot-coll-nav--next {
   right: -22px;
 }
