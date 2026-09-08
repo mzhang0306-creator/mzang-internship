@@ -4,9 +4,13 @@ import CountdownTimer from "./CountdownTimer";
 
 // Reusable NFT item card used by New Items and Explore. Callers provide the
 // surrounding grid/slide wrapper; this renders the inner .nft__item block.
-const NftCard = ({ item }) => {
+const NftCard = ({ item, index = 0 }) => {
   return (
-    <div className="nft__item">
+    <div
+      className="nft__item"
+      data-aos="fade-up"
+      data-aos-delay={(index % 4) * 100}
+    >
       <div className="author_list_pp">
         <Link to={`/author/${item.authorId}`} title="Creator">
           <img className="lazy" src={item.authorImage} alt={item.title} />

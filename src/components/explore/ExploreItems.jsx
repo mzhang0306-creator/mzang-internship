@@ -52,13 +52,13 @@ const ExploreItems = () => {
               <NftCardSkeleton />
             </div>
           ))
-        : items.slice(0, visible).map((item) => (
+        : items.slice(0, visible).map((item, index) => (
             <div
               key={item.id}
               className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
               style={{ display: "block", backgroundSize: "cover" }}
             >
-              <NftCard item={item} />
+              <NftCard item={item} index={index} />
             </div>
           ))}
 

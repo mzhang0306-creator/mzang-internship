@@ -16,12 +16,15 @@ const AuthorItems = ({ loading, nftCollection = [], authorImage, authorId }) => 
                   <NftCardSkeleton />
                 </div>
               ))
-            : nftCollection.map((nft) => (
+            : nftCollection.map((nft, index) => (
                 <div
                   className="col-lg-3 col-md-6 col-sm-6 col-xs-12"
                   key={nft.id}
                 >
-                  <NftCard item={{ ...nft, authorImage, authorId }} />
+                  <NftCard
+                    item={{ ...nft, authorImage, authorId }}
+                    index={index}
+                  />
                 </div>
               ))}
         </div>

@@ -42,9 +42,9 @@ const NewItems = () => {
                       <NftCardSkeleton />
                     </div>
                   ))
-                : items.map((item) => (
+                : items.map((item, index) => (
                     <div className="hot-coll-slide" key={item.id}>
-                      <NftCard item={item} />
+                      <NftCard item={item} index={index} />
                     </div>
                   ))}
             </Slider>
