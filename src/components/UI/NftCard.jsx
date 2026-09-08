@@ -5,6 +5,10 @@ import CountdownTimer from "./CountdownTimer";
 // Reusable NFT item card used by New Items and Explore. Callers provide the
 // surrounding grid/slide wrapper; this renders the inner .nft__item block.
 const NftCard = ({ item, index = 0 }) => {
+  const shareUrl = encodeURIComponent(
+    `${window.location.origin}/item-details/${item.nftId}`
+  );
+
   return (
     <div
       className="nft__item"
@@ -26,13 +30,21 @@ const NftCard = ({ item, index = 0 }) => {
             <button>Buy Now</button>
             <div className="nft__item_share">
               <h4>Share</h4>
-              <a href="" target="_blank" rel="noreferrer">
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fa fa-facebook fa-lg"></i>
               </a>
-              <a href="" target="_blank" rel="noreferrer">
+              <a
+                href={`https://twitter.com/intent/tweet?url=${shareUrl}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fa fa-twitter fa-lg"></i>
               </a>
-              <a href="">
+              <a href={`mailto:?body=${shareUrl}`}>
                 <i className="fa fa-envelope fa-lg"></i>
               </a>
             </div>
