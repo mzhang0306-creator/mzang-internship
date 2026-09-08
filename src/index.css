@@ -10,3 +10,45 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
+
+/* Hot Collections react-slick carousel */
+#section-collections .slick-slider {
+  position: relative;
+}
+#section-collections .slick-slide > div {
+  padding: 0 12px;
+}
+#section-collections .slick-list {
+  margin: 0 -12px;
+}
+/* Custom arrows positioned outside the cards */
+#section-collections .hot-coll-nav {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #35404f;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+#section-collections .hot-coll-nav:hover {
+  background: #35404f;
+  color: #fff;
+}
+#section-collections .hot-coll-nav--prev {
+  left: -22px;
+}
+#section-collections .hot-coll-nav--next {
+  right: -22px;
+}
