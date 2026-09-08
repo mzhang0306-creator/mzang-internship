@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,8 +17,7 @@ const HotCollections = () => {
   useEffect(() => {
     async function fetchCollections() {
       setLoading(true);
-      const response = await fetch(API_URL);
-      const data = await response.json();
+      const { data } = await axios.get(API_URL);
       setCollections(data);
       setLoading(false);
     }

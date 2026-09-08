@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
 
@@ -12,8 +13,7 @@ const TopSellers = () => {
   useEffect(() => {
     async function fetchSellers() {
       setLoading(true);
-      const response = await fetch(API_URL);
-      const data = await response.json();
+      const { data } = await axios.get(API_URL);
       setSellers(data);
       setLoading(false);
     }
